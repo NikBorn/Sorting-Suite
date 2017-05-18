@@ -1,26 +1,16 @@
 
-  var merge = (array1, array2) => {
-  var mergedList = [];
+let merge = (array1, array2) => {
 
+  let mergedList = [];
 
-   while (array1.length && array2.length) {
+  while (array1.length && array2.length) {
 
-
-      if (array1[0] <= array2[0]) {
-        mergedList.push(array1.shift())
-        console.log('2', array2)
-      }
-
-      else
-
-      {
-        mergedList.push(array2.shift())
-        console.log('1', array1)
-      }
-
-
-
+    if (array1[0] <= array2[0]) {
+      mergedList.push(array1.shift())
+    } else {
+      mergedList.push(array2.shift())
     }
+  }
 
   while (array1.length) {
     mergedList.push(array1.shift())
@@ -29,38 +19,26 @@
   while (array2.length) {
     mergedList.push(array2.shift())
   }
-   return mergedList
-  }
 
+  return mergedList
 
-let mergeSort = (array) => {
+}
+
+const mergeSort = (array) => {
+
   let q =  Math.floor((array.length) / 2);
-  var right = array.slice(q);
-  var left = array.slice(0, q);
-
-
-  console.log('right', right)
-  console.log('left', left)
-  console.log('------------')
-
-  // if (array.length === 1) {
-  //   console.log('time to merge')
-  //   merge(left, right)
-  // }
+  let right = array.slice(q);
+  let left = array.slice(0, q);
 
   if (right.length > 1) {
     right = mergeSort(right)
-      }
+  }
 
   if (left.length > 1 )  {
     left = mergeSort(left)
-    }
-      return merge(left, right)
-
   }
 
+  return merge(left, right)
+}
 
-
-console.log(mergeSort(unsortedArray));
-
-export default merge.js;
+export default mergeSort;
