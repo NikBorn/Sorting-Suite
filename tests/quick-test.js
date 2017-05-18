@@ -25,8 +25,8 @@ describe('quickSort', () => {
     expect(quickSort(smallLetters)).to.deep.equal(sortedArray)
   })
 
-  it('should sort a large array of numbers (17000)(1935ms)', () => {
-    let largeArray = genRanNum(120500)
+  it('should sort a large array of numbers (120500)(1935ms)', () => {
+    let largeArray = genRanNum(320500)
     let sortedArray = [...largeArray].sort( (a, b) => a - b)
 
     expect(quickSort(largeArray)).to.deep.equal(sortedArray)

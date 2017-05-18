@@ -25,7 +25,7 @@ describe('insertionSort', () => {
   })
 
   it('should sort a large array of numbers (17000)(1935ms)', () => {
-    let largeArray = genRanNum(16500)
+    let largeArray = genRanNum(17000)
     let sortedArray = [...largeArray].sort( (a, b) => a - b)
 
     expect(insertionSort(largeArray)).to.deep.equal(sortedArray)

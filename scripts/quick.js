@@ -14,7 +14,10 @@ const quickSort = (array) => {
     (pivot > array[i]) ?  small.push(array[i]) :  large.push(array[i])
   }
 
-  return [ ...quickSort(small), pivot, ...quickSort(large) ];
+  small = quickSort(small)
+  large = quickSort(large)
+
+  return [ ...small, pivot, ...large ];
 
 }
 
